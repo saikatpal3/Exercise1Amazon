@@ -23,13 +23,12 @@ public class HomePage extends BaseTest {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public SearchPage performSearch(){
+	public void performSearch(){
 		Select select = new Select(selectBooks);
 		select.selectByVisibleText("Books");
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].value='qa testing for beginners';", searchBox);
 		jse.executeScript("arguments[0].click();", submitButton);
-		return new SearchPage();
 	}
 
 }

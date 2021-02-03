@@ -3,6 +3,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.amazon.pom.base.BaseTest;
 
@@ -22,9 +24,8 @@ public class AddToCartPage extends BaseTest{
 		return price.getText();
 	}
 	
-	public CheckoutPage addToCart() {
+	public void addToCart() {
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].click();", proceedToCheckOut);
-		return new CheckoutPage();
 	}
 }
